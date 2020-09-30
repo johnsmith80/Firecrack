@@ -1,0 +1,11 @@
+#!/bin/bash
+if [[ -e firecrack ]]; then
+sudo apt-get update && python -m pip install -r requirements.txt
+else
+printf "Executable Firecrack Not Found!\n"
+printf "Creating One!\n"
+chmod +x bin/firecrack
+cp /bin/firecrack /usr/local/bin/firecrack
+apt-get update && python -m pip install -r requirements.txt
+fi
+printf "\nDone\n"
